@@ -1,0 +1,29 @@
+[package]
+name = "Swift_UsingRustLib_v1"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["lib", "staticlib"]
+
+[dependencies]
+cbindgen = "0.26.0"
+libp2p = { version = "0.54.1", features = [
+  "async-std",
+  "cbor",
+  "dns",
+  "gossipsub",
+  "identify",
+  "kad",
+  "macros",
+  "mdns",
+  "noise",
+  "ping",
+  "quic",
+  "relay",
+  "rendezvous",
+  "request-response",
+  "tcp",
+  "tokio",
+  "yamux"
+] }
