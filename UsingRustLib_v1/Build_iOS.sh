@@ -21,7 +21,7 @@ $LIPO -info $LIB_IOS_X86_64;
 $LIPO -create $LIB_IOS_X86_64 $LIB_IOS_ARM_64 -output $LIB_IOS_FAT;
 $LIPO -info $LIB_IOS_FAT;
 
-CBINDGEN=$(which cbindgen) && CBINDGEN -l C -o $LIB_HEADER;
+CBINDGEN=$(which cbindgen) && CBINDGEN -l C -o $LIB_HEADER || cargo install --force cbindgen;
 
 cp $LIB_IOS_FAT ../UsingRust_v1/RustLibrary/
 cp $LIB_HEADER ../UsingRust_v1/RustLibrary/
